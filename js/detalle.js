@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prop.dormitorios) featuresHtml += `<div class="feature-item"><i class="fas fa-bed"></i> ${prop.dormitorios} Dormitorios</div>`;
     if (prop.banos) featuresHtml += `<div class="feature-item"><i class="fas fa-bath"></i> ${prop.banos} Baños</div>`;
     if (prop.garajes) featuresHtml += `<div class="feature-item"><i class="fas fa-car"></i> ${prop.garajes} Garajes</div>`;
-    if (prop.superficie_m2) featuresHtml += `<div class="feature-item"><i class="fas fa-ruler-combined"></i> ${prop.superficie_m2} m²</div>`;
+    if (prop.superficie_m2 || prop.superficie) featuresHtml += `<div class="feature-item"><i class="fas fa-ruler-combined"></i> ${prop.superficie_m2 || prop.superficie} m²</div>`;
 
     // Extra features array
     if (prop.caracteristicas && prop.caracteristicas.length > 0) {
@@ -58,8 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Description
     const descEl = document.getElementById('detail-description');
-    // If description is missing in data, use placeholders or existing fields
-    descEl.innerText = prop.descripcion || `Excelente propiedad ubicada en ${prop.direccion}. ${prop.dormitorios ? 'Cuenta con ' + prop.dormitorios + ' dormitorios.' : ''} Contáctenos para más información.`;
+    // Si la descripción existe, usarla. Si no, usar el fallback pero más limpio
+    if (prop.descripcion && prop.descripcion.trim().length > 10) {
+        descEl.innerText = prop.descripcion;
+    } else {
+        descEl.innerText = `Excelente propiedad ubicada en ${prop.direccion || prop.ciudades || 'la zona'}. Contáctenos para más información.`;
+    }
 
     // Media Strip
     const track = document.getElementById('media-track');

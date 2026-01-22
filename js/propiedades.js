@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="property-features" style="display: flex; gap: 10px; margin-bottom: 15px; font-size: 0.85em; color: #555;">
                         ${prop.dormitorios ? `<span><i class="fas fa-bed"></i> ${prop.dormitorios}</span>` : ''}
                         ${prop.banos ? `<span><i class="fas fa-bath"></i> ${prop.banos}</span>` : ''}
-                        ${prop.superficie_m2 ? `<span><i class="fas fa-ruler-combined"></i> ${prop.superficie_m2}m²</span>` : ''}
+                        ${(prop.superficie_m2 || prop.superficie) ? `<span><i class="fas fa-ruler-combined"></i> ${prop.superficie_m2 || prop.superficie}m²</span>` : ''}
                     </div>
                     <div class="property-footer">
                         <div class="property-price">${prop.precio || 'Consultar'}</div>

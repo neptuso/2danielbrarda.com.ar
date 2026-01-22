@@ -1,1 +1,27 @@
-gitignore
+# Dependencias
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Datos Sensibles / Base de Datos local
+# Descomenta las siguientes líneas si NO quieres subir los CSV originales a GitHub
+# wp_posts.csv
+# wp_postmeta.csv
+# wp_terms.csv
+
+# Archivos temporales y de sistema
+.DS_Store
+Thumbs.db
+.env
+.project
+.vscode/
+
+# Logs y Temporales de la App
+logs/
+*.log
+data/temp/
+
+# Producción / Builds (opcional si usas herramientas de compilación)
+dist/
+build/

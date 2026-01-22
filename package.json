@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "migrate": "node migrate_data.js"
+    "migrate": "node scripts/migrate_data.js",
+    "extract": "node scripts/extract_full_data.js",
+    "sync": "node scripts/full_sync.js"
   },
   "keywords": [],
   "author": "",
