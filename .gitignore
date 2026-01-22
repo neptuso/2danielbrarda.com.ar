@@ -4,6 +4,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# c_o_m_e_t_r_a_b_a_s 
 # Datos Sensibles / Base de Datos local
 # Descomenta las siguientes líneas si NO quieres subir los CSV originales a GitHub
 # wp_posts.csv
